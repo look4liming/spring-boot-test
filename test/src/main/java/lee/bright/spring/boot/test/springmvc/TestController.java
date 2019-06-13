@@ -62,8 +62,8 @@ public class TestController {
 	 */
 	@RequestMapping("/printCookieJsessionid")
 	@ResponseBody
-	public String printCookieJsessionid(@CookieValue("JSESSIONID") String jsessionid) {
-		return "JSESSIONID: " + jsessionid;
+	public String printCookieJsessionid(@CookieValue("JSESSIONID") String jSessionId) {
+		return "JSESSIONID: " + jSessionId;
 	}
 
 }
