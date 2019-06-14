@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TestController {
 	
 	/**
-	 * http://IP:1234/spring-boot-test/spring-mvc/hello<br/>
+	 * http://127.0.0.1:1234/spring-boot-test/spring-mvc/hello<br/>
 	 * 访问该链接地址，会在浏览器上显示“Hello!”。
 	 */
 	@RequestMapping("/hello")
@@ -27,7 +27,7 @@ public class TestController {
 	}
 
 	/**
-	 * http://IP:1234/spring-boot-test/spring-mvc/helloUser/Mike<br/>
+	 * http://127.0.0.1:1234/spring-boot-test/spring-mvc/helloUser/Mike<br/>
 	 * 访问该链接地址，会在浏览器上显示“Hello Mike!”。
 	 */
 	@RequestMapping("/helloUser/{userName}")
@@ -37,7 +37,7 @@ public class TestController {
 	}
 
 	/**
-	 * http://IP:1234/spring-boot-test/spring-mvc/helloGender?gender=male<br/>
+	 * http://127.0.0.1:1234/spring-boot-test/spring-mvc/helloGender?gender=male<br/>
 	 * 访问该链接地址，会在浏览器上显示“Your gender is male.”。
 	 */
 	@RequestMapping("/helloGender")
@@ -47,7 +47,7 @@ public class TestController {
 	}
 	
 	/**
-	 * http://IP:1234/spring-boot-test/spring-mvc/printRequestHeaderHost<br/>
+	 * http://127.0.0.1:1234/spring-boot-test/spring-mvc/printRequestHeaderHost<br/>
 	 * 访问该链接地址，会在浏览器上显示HTTP请求头信息。
 	 */
 	@RequestMapping("/printRequestHeaderHost")
@@ -57,12 +57,12 @@ public class TestController {
 	}
 	
 	/**
-	 * http://IP:1234/spring-boot-test/spring-mvc/printCookieJsessionId<br/>
+	 * http://127.0.0.1:1234/spring-boot-test/spring-mvc/printCookieJsessionId<br/>
 	 * 访问该链接地址，会在浏览器上显示JSESSIONID的值。
 	 */
 	@RequestMapping("/printCookieJsessionId")
 	@ResponseBody
-	public String printCookieJsessionid(@CookieValue("JSESSIONID") String jSessionId) {
+	public String printCookieJsessionId(@CookieValue("JSESSIONID") String jSessionId) {
 		return "JSESSIONID: " + jSessionId;
 	}
 
