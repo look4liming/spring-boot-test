@@ -17,7 +17,7 @@ yml-object:
         - set-1
         - set-2
     map: {k1: v1, k2: v2, k3: v3}
-    ymlSubObject: 
+    yml-sub-object: 
         name: name001
         age: 11
 
