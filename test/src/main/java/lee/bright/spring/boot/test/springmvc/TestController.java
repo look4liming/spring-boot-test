@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Spring boot 集成 Spring MVC。
+ * Spring Boot 集成 Spring MVC。
  * @author Bright Lee
  */
 @RestController
@@ -25,11 +25,11 @@ public class TestController {
 	}
 
 	/**
-	 * http://127.0.0.1:1234/spring-boot-test/spring-mvc/helloUser/Mike<br/>
+	 * http://127.0.0.1:1234/spring-boot-test/spring-mvc/helloUserName/Mike<br/>
 	 * 访问该链接地址，会在浏览器上显示“Hello Mike!”。
 	 */
-	@RequestMapping("/helloUser/{userName}")
-	public String helloUser(@PathVariable String userName) {
+	@RequestMapping("/helloUserName/{userName}")
+	public String helloUserName(@PathVariable String userName) {
 		return "Hello " + userName + "!";
 	}
 
@@ -70,6 +70,15 @@ public class TestController {
 		bean.setField1("F-1");
 		bean.setField2("F-2");
 		return bean;
+	}
+	
+	/**
+	 * http://127.0.0.1:1234/spring-boot-test/spring-mvc/printTestBean?field1=111&field2=222&field3=333
+	 * 访问该链接地址，会在浏览器上显示TestBean对象的JSON字符串，其中已注入了url中出现的参数。
+	 */
+	@RequestMapping("printTestBean")
+	public TestBean printTestBean(TestBean testBean) {
+		return testBean;
 	}
 
 }
