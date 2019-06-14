@@ -57,10 +57,10 @@ public class TestController {
 	}
 	
 	/**
-	 * http://IP:1234/spring-boot-test/spring-mvc/printCookieJsessionid<br/>
+	 * http://IP:1234/spring-boot-test/spring-mvc/printCookieJsessionId<br/>
 	 * 访问该链接地址，会在浏览器上显示JSESSIONID的值。
 	 */
-	@RequestMapping("/printCookieJsessionid")
+	@RequestMapping("/printCookieJsessionId")
 	@ResponseBody
 	public String printCookieJsessionid(@CookieValue("JSESSIONID") String jSessionId) {
 		return "JSESSIONID: " + jSessionId;
