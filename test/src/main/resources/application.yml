@@ -1,0 +1,25 @@
+debug: true
+
+server: 
+    port: 1234
+    servlet: 
+        context-path: /spring-boot-test
+
+yml-object: 
+    string: string-aaabbbccc
+    date: 2019/06/14
+    bool: true
+    list:
+        - list-1
+        - list-2
+        - list-3
+    set: 
+        - set-1
+        - set-2
+    map: {k1: v1, k2: v2, k3: v3}
+    ymlSubObject: 
+        name: name001
+        age: 11
+
+
+
