@@ -1,5 +1,6 @@
 package lee.bright.spring.boot.test.config;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,7 @@ public class YmlObject {
 	private Set<String> set;
 	private Map<String, Object> map;
 	private YmlSubObject ymlSubObject;
+	private BigDecimal bigDecimal;
 	
 	public YmlObject() {
 	}
@@ -83,6 +85,14 @@ public class YmlObject {
 		this.ymlSubObject = ymlSubObject;
 	}
 	
+	public BigDecimal getBigDecimal() {
+		return bigDecimal;
+	}
+
+	public void setBigDecimal(BigDecimal bigDecimal) {
+		this.bigDecimal = bigDecimal;
+	}
+
 	public static class YmlSubObject {
 		
 		private String name;

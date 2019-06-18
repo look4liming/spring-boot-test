@@ -25,6 +25,7 @@ public class YmlController {
 		buf.append("list=====>").append(ymlObject.getList()).append("<br/>");
 		buf.append("set======>").append(ymlObject.getSet()).append("<br/>");
 		buf.append("map======>").append(ymlObject.getMap()).append("<br/>");
+		buf.append("bigDecimal======>").append(ymlObject.getBigDecimal()).append("<br/>");
 		YmlSubObject ymlSubObject = ymlObject.getYmlSubObject();
 		if (ymlSubObject != null) {
 			buf.append("ymlSubObject.name===>").append(ymlObject.getYmlSubObject().getName()).append("<br/>");
