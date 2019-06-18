@@ -13,7 +13,7 @@ public class PropertySourceController {
 	
 	@RequestMapping("/print")
 	public String printUsername() {
-		return obj.toString();
+		return "username============>" + obj.getUsername();
 	}
 
 }
