@@ -5,7 +5,7 @@ spring:
         active: dev
 
 server: 
-    port: 1234
+    port: 4321
     servlet: 
         context-path: /spring-boot-test
 
@@ -25,7 +25,7 @@ spring:
             force: true
 
 server: 
-    port: 4321
+    port: 1234
     servlet: 
         context-path: /spring-boot-test
 
