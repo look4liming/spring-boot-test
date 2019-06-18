@@ -1,6 +1,23 @@
 debug: true
 
 spring: 
+    profiles: 
+        active: dev
+
+server: 
+    port: 1234
+    servlet: 
+        context-path: /spring-boot-test
+
+yml-object: 
+    string: string-aaabbbccc
+
+---
+
+debug: false
+
+spring: 
+    profiles: dev
     http: 
         encoding: 
             enabled: true
@@ -8,7 +25,7 @@ spring:
             force: true
 
 server: 
-    port: 1234
+    port: 4321
     servlet: 
         context-path: /spring-boot-test
 
@@ -25,8 +42,5 @@ yml-object:
         - set-2
     map: {k1: v1, k2: v2, k3: v3}
     yml-sub-object: 
-        name: 名字001
+        name: 名字001===>
         age: 11
-
-
-
