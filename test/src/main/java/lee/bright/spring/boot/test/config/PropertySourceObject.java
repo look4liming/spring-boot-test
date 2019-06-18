@@ -5,7 +5,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-@PropertySource({"classpath:user.properties"})
+@PropertySource({"classpath:value.properties"})
 @ConfigurationProperties(prefix="user")
 public class PropertySourceObject {
 	
