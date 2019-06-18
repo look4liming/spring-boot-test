@@ -1,10 +1,11 @@
-package lee.bright.spring.boot.test.yml;
+package lee.bright.spring.boot.test.config;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +24,13 @@ public class YmlObject {
 	private Set<String> set;
 	private Map<String, Object> map;
 	private YmlSubObject ymlSubObject;
+	
+	@Value("${yml-object.string}")
+	private String annotatedString;
+	@Value("#{11*6}")
+	private int annotatedAge;
+	@Value("true")
+	private boolean annotatedBoolean;
 	
 	public YmlObject() {
 	}
@@ -81,6 +89,56 @@ public class YmlObject {
 
 	public void setYmlSubObject(YmlSubObject ymlSubObject) {
 		this.ymlSubObject = ymlSubObject;
+	}
+
+	public String getAnnotatedString() {
+		return annotatedString;
+	}
+
+	public void setAnnotatedString(String annotatedString) {
+		this.annotatedString = annotatedString;
+	}
+
+	public int getAnnotatedAge() {
+		return annotatedAge;
+	}
+
+	public void setAnnotatedAge(int annotatedAge) {
+		this.annotatedAge = annotatedAge;
+	}
+
+	public boolean isAnnotatedBoolean() {
+		return annotatedBoolean;
+	}
+
+	public void setAnnotatedBoolean(boolean annotatedBoolean) {
+		this.annotatedBoolean = annotatedBoolean;
+	}
+	
+	public static class YmlSubObject {
+		
+		private String name;
+		private int age;
+		
+		public YmlSubObject() {
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public int getAge() {
+			return age;
+		}
+
+		public void setAge(int age) {
+			this.age = age;
+		}
+
 	}
 
 }

@@ -1,4 +1,6 @@
-package lee.bright.spring.boot.test.yml;
+package lee.bright.spring.boot.test.config;
+
+import lee.bright.spring.boot.test.config.YmlObject.YmlSubObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +29,11 @@ public class YmlController {
 			buf.append("ymlSubObject.name===>").append(ymlObject.getYmlSubObject().getName()).append("<br/>");
 			buf.append("ymlSubObject.age====>").append(ymlObject.getYmlSubObject().getAge()).append("<br/>");
 		}
+
+		buf.append("@Value(\"${yml-object.string}\")===>").append(ymlObject.getAnnotatedString()).append("<br/>");
+		buf.append("@Value(\"#{11*6}\")===>").append(ymlObject.getAnnotatedAge()).append("<br/>");
+		buf.append("@Value(\"true\")===>").append(ymlObject.isAnnotatedBoolean()).append("<br/>");
+		
 		String s = buf.toString();
 		return s;
 	}
