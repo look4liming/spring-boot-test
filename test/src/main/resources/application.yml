@@ -1,5 +1,12 @@
 debug: true
 
+spring: 
+    http: 
+        encoding: 
+            enabled: true
+            charset: UTF-8
+            force: true
+
 server: 
     port: 1234
     servlet: 
@@ -18,7 +25,7 @@ yml-object:
         - set-2
     map: {k1: v1, k2: v2, k3: v3}
     yml-sub-object: 
-        name: name001
+        name: 名字001
         age: 11
 
 
