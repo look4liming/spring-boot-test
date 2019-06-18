@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/PropertySource")
+@RequestMapping("/Value")
 @RestController
-public class PropertySourceController {
+public class ValueController {
 	
 	@Autowired
-	private PropertySourceObject obj;
+	private ValueObject obj;
 	
 	@RequestMapping("/print")
 	public String printUsername() {

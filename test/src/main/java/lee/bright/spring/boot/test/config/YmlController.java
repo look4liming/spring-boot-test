@@ -7,15 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/yml")
 public class YmlController {
 	
 	@Autowired
 	private YmlObject ymlObject;
 	
 	/**
-	 * http://127.0.0.1:1234/spring-boot-test/yml<br/>
+	 * http://127.0.0.1:1234/spring-boot-test/yml/print<br/>
 	 */
-	@RequestMapping("/yml")
+	@RequestMapping("/print")
 	public String printYmlObject() {
 		StringBuilder buf = new StringBuilder(2048);
 		buf.append("string===>").append(ymlObject.getString()).append("<br/>");
@@ -29,11 +30,6 @@ public class YmlController {
 			buf.append("ymlSubObject.name===>").append(ymlObject.getYmlSubObject().getName()).append("<br/>");
 			buf.append("ymlSubObject.age====>").append(ymlObject.getYmlSubObject().getAge()).append("<br/>");
 		}
-
-		buf.append("@Value(\"${yml-object.string}\")===>").append(ymlObject.getAnnotatedString()).append("<br/>");
-		buf.append("@Value(\"#{11*6}\")===>").append(ymlObject.getAnnotatedAge()).append("<br/>");
-		buf.append("@Value(\"true\")===>").append(ymlObject.isAnnotatedBoolean()).append("<br/>");
-		
 		String s = buf.toString();
 		return s;
 	}

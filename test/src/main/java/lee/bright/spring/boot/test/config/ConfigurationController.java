@@ -13,7 +13,7 @@ public class ConfigurationController {
 	@Autowired
 	private MyBean myBean;
 	
-	@RequestMapping("/printMyBean")
+	@RequestMapping("/print")
 	public String printMyBean() {
 		return myBean.toString();
 	}
