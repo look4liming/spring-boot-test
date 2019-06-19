@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * “@ConfigurationProperties”注解告诉框架把application.yml配置文件中的配置信息注入到该类的实例中来。<br/>
- * “@Component”使得改类的实例可以被注入到别的对象中。
+ * “@Component”使得该类的实例可以被注入到别的对象中。
  */
 @Component
 @ConfigurationProperties(prefix="yml-object")
