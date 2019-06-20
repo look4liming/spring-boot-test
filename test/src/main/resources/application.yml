@@ -44,4 +44,4 @@ yml-object:
     yml-sub-object: 
         name: 名字001===>
         age: 11
-    bigDecimal: 1234567890.0987654321
+    bigDecimal: 1234567890.0987654321 

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.padual.com/java/logback.xsd"
+	debug="false" scan="true" scanPeriod="30 second">
+
+	<property name="ROOT" value="D:/spring-boot-test/logs/" />
+	<property name="FILESIZE" value="64MB" />
+	<property name="MAXHISTORY" value="100" />
+	
+	<timestamp key="DATETIME" datePattern="yyyy-MM-dd HH:mm:ss" />
+	
+	<!-- 控制台打印设置 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder charset="utf-8">
+			<pattern>[%-5level] %d{${DATETIME}} [%thread] %logger{36} - %m%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- ERROR日志输出设置 -->
+	<appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder charset="utf-8">
+			<pattern>[%-5level] %d{${DATETIME}} [%thread] %logger{36} - %m%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${ROOT}%d/error.%i.log</fileNamePattern>
+			<maxHistory>${MAXHISTORY}</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${FILESIZE}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<!-- WARN日志输出设置 -->
+	<appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder charset="utf-8">
+			<pattern>[%-5level] %d{${DATETIME}} [%thread] %logger{36} - %m%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>WARN</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${ROOT}%d/warn.%i.log</fileNamePattern>
+			<maxHistory>${MAXHISTORY}</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${FILESIZE}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<!-- INFO日志输出设置 -->
+	<appender name="INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder charset="utf-8">
+			<pattern>[%-5level] %d{${DATETIME}} [%thread] %logger{36} - %m%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${ROOT}%d/info.%i.log</fileNamePattern>
+			<maxHistory>${MAXHISTORY}</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${FILESIZE}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<!-- DEBUG日志输出设置 -->
+	<appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder charset="utf-8">
+			<pattern>[%-5level] %d{${DATETIME}} [%thread] %logger{36} - %m%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${ROOT}%d/debug.%i.log</fileNamePattern>
+			<maxHistory>${MAXHISTORY}</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${FILESIZE}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<!-- TRACE日志输出设置 -->
+	<appender name="TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder charset="utf-8">
+			<pattern>[%-5level] %d{${DATETIME}} [%thread] %logger{36} - %m%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>TRACE</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${ROOT}%d/trace.%i.log</fileNamePattern>
+			<maxHistory>${MAXHISTORY}</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${FILESIZE}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<!-- Logger 根目录 -->
+	<root level="DEBUG">
+		<level value="DEBUG" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="TRACE" />
+		<appender-ref ref="DEBUG" />
+		<appender-ref ref="INFO" />
+		<appender-ref ref="WARN" />
+		<appender-ref ref="ERROR" />
+	</root>
+</configuration>

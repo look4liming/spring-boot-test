@@ -18,6 +18,7 @@ public class LogbackController {
 	public String log() {
 		Date date = new Date();
 		String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+		LOG.trace("trace======>time: {}", time);
 		LOG.debug("debug======>time: {}", time);
 		LOG.info( "info=======>time: {}", time);
 		LOG.warn( "warn=======>time: {}", time);
