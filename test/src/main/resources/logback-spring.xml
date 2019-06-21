@@ -114,8 +114,8 @@
 	</appender>
 	
 	<!-- Logger 根目录 -->
-	<root level="DEBUG">
-		<level value="DEBUG" />
+	<root level="INFO">
+		<level value="INFO" />
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="TRACE" />
 		<appender-ref ref="DEBUG" />

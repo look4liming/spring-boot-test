@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hello Thymeleaf!!!</title>
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+你好，<span th:text="${name}">Thymeleaf</span>！！！<br/>
+<br/>
+
+姓名：<span th:text="${person.name}">name</span><br/>
+性别：<span th:text="${person.gender}">gender</span><br/>
+<br/>
+
+<div th:object="${person}">
+	姓名2：<span th:text="*{name}">name</span><br/>
+	性别2：<span th:text="*{gender}">gender</span>
+</div>
+<br/>
+
+请求对象： <span th:text="${#request}">request</span><br/>
+<br/>
+
+<a th:href="@{/thymeleaf/hello2(param1=1,param2=2,param3=3)}">本机地址</a><br/>
+<br/>
+
+<span th:text="${h1}">123</span><br/>
+<span th:utext="${h1}">321</span><br/>
+<br/>
+</body>
+</html>
