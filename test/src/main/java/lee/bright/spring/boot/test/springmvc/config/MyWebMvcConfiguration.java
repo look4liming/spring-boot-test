@@ -12,11 +12,11 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @Configuration
-public class MyMvcConfiguration extends WebMvcConfigurationSupport {
+public class MyWebMvcConfiguration extends WebMvcConfigurationSupport {
 	
-	private static final Logger logger = LoggerFactory.getLogger(MyMvcConfiguration.class);
+	private static final Logger logger = LoggerFactory.getLogger(MyWebMvcConfiguration.class);
 	
-	public MyMvcConfiguration() {
+	public MyWebMvcConfiguration() {
 	}
 	
 	@Override
