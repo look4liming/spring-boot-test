@@ -2,12 +2,16 @@ package lee.bright.spring.boot.test.thymeleaf;
 
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/thymeleaf")
 public class ThymeleafController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(ThymeleafController.class);
 	
 	/**
 	 * “http://127.0.0.1:1234/spring-boot-test/thymeleaf/hello”<br/>
@@ -16,6 +20,8 @@ public class ThymeleafController {
 	 */
 	@RequestMapping("/hello")
 	public String hello(Map<String, Object> model) {
+		logger.info("hello!!!!!!!");
+		
 		model.put("name", "Thymeleaf模板引擎");
 		
 		Person person = new Person();
