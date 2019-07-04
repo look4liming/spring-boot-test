@@ -11,11 +11,8 @@ public class MyWebRequestInterceptor implements WebRequestInterceptor {
 	private static final Logger logger = LoggerFactory.getLogger(MyWebRequestInterceptor.class);
 
 	@Override
-	public void afterCompletion(WebRequest request, Exception exception)
-			throws Exception {
-		logger.info("afterCompletion...");
-		String abc = request.getParameter("abc");
-		logger.info("abc===>{}", abc);
+	public void preHandle(WebRequest request) throws Exception {
+		logger.info("preHandle...");
 	}
 
 	@Override
@@ -24,8 +21,11 @@ public class MyWebRequestInterceptor implements WebRequestInterceptor {
 	}
 
 	@Override
-	public void preHandle(WebRequest request) throws Exception {
-		logger.info("preHandle...");
+	public void afterCompletion(WebRequest request, Exception exception)
+			throws Exception {
+		logger.info("afterCompletion...");
+		String abc = request.getParameter("abc");
+		logger.info("abc===>{}", abc);
 	}
 
 }
