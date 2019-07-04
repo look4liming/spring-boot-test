@@ -39,6 +39,7 @@ public class MyWebMvcConfigurationSupport extends WebMvcConfigurationSupport {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/META-INF/resources/");
+		registry.addResourceHandler("/js/jquery/**").addResourceLocations("classpath:/META-INF/resources/js/jquery/");
 		registry.addResourceHandler("/js/**").addResourceLocations("classpath:/META-INF/resources/js/");
 		logger.info("addResourceHandlers===>");
 	}
