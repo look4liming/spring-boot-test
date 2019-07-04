@@ -31,13 +31,15 @@ public class MyWebMvcConfigurationSupport extends WebMvcConfigurationSupport {
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
+		logger.info("addInterceptors===>");
 		WebRequestInterceptor interceptor = new MyWebRequestInterceptor();
 		registry.addWebRequestInterceptor(interceptor);
-		logger.info("addInterceptors===>{}", interceptor);
 	}
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/META-INF/resources/");
+		registry.addResourceHandler("/js/**").addResourceLocations("classpath:/META-INF/resources/js/");
 		logger.info("addResourceHandlers===>");
 	}
 	
