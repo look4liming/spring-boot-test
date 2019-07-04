@@ -21,12 +21,12 @@ public class MyWebMvcConfigurationSupport extends WebMvcConfigurationSupport {
 	
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		// TODO
+		logger.info("addCorsMappings===>");
 	}
 	
 	@Override
 	public void addFormatters(FormatterRegistry registry) {
-		// TODO
+		logger.info("addFormatters===>");
 	}
 	
 	@Override
@@ -38,12 +38,14 @@ public class MyWebMvcConfigurationSupport extends WebMvcConfigurationSupport {
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		// TODO
+		logger.info("addResourceHandlers===>");
 	}
 	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		// TODO
+		// 发现下面这行被注释掉的代码无效：
+		//registry.addViewController("/abcd").setViewName("hello");
+		logger.info("addViewControllers===>");
 	}
 
 }
