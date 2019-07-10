@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix="user")
-public class ValueObject {
+public class MyValue {
 	
 	@Value("${yml-object.string}")
 	private String annotatedString;
@@ -15,7 +15,7 @@ public class ValueObject {
 	@Value("true")
 	private boolean annotatedBoolean;
 	
-	public ValueObject() {
+	public MyValue() {
 	}
 
 	public String getAnnotatedString() {

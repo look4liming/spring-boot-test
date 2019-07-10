@@ -1,6 +1,6 @@
 package lee.bright.spring.boot.test.config;
 
-import lee.bright.spring.boot.test.config.YmlObject.YmlSubObject;
+import lee.bright.spring.boot.test.config.MyYml.YmlSubObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/yml")
-public class YmlController {
+public class MyYmlController {
 	
 	@Autowired
-	private YmlObject ymlObject;
+	private MyYml ymlObject;
 	
 	/**
 	 * http://127.0.0.1:1234/spring-boot-test/yml/print<br/>

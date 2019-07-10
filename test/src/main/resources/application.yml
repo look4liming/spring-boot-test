@@ -12,6 +12,8 @@ spring:
             enabled: false
     favicon: 
         enabled: false
+    messages: 
+        basename: i18n.i18nPage
 
 server: 
     port: 4321

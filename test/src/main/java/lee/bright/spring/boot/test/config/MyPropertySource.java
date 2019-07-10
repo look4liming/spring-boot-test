@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 @Component
 @PropertySource({"classpath:PropertySource.properties"})
 @ConfigurationProperties(prefix="user")
-public class PropertySourceObject {
+public class MyPropertySource {
 	
 	private String username;
 	
-	public PropertySourceObject() {
+	public MyPropertySource() {
 	}
 	
 	public String getUsername() {

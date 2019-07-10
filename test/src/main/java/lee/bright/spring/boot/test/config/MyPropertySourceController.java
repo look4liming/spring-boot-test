@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/PropertySource")
 @RestController
-public class PropertySourceController {
+public class MyPropertySourceController {
 	
 	@Autowired
-	private PropertySourceObject obj;
+	private MyPropertySource obj;
 	
 	@RequestMapping("/print")
 	public String printUsername() {

@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ConfigurationProperties(prefix="yml-object")
-public class YmlObject {
+public class MyYml {
 	
 	private String string;
 	private Date date;
@@ -26,7 +26,7 @@ public class YmlObject {
 	private YmlSubObject ymlSubObject;
 	private BigDecimal bigDecimal;
 	
-	public YmlObject() {
+	public MyYml() {
 	}
 
 	public String getString() {

@@ -1,21 +1,19 @@
 package lee.bright.spring.boot.test.config;
 
-import lee.bright.spring.boot.test.config.ConfigurationObject.MyBean;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping("/Value")
 @RestController
-@RequestMapping("/Configuration")
-public class ConfigurationController {
+public class MyValueController {
 	
 	@Autowired
-	private MyBean myBean;
+	private MyValue obj;
 	
 	@RequestMapping("/print")
-	public String printMyBean() {
-		return myBean.toString();
+	public String printUsername() {
+		return obj.toString();
 	}
 
 }

@@ -38,17 +38,17 @@ public class MyWebMvcConfigurationSupport extends WebMvcConfigurationSupport {
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/META-INF/resources/");
+		logger.info("addResourceHandlers===>");
+		registry.addResourceHandler("/**").addResourceLocations("classpath:/META-INF/resources/");
 		registry.addResourceHandler("/js/jquery/**").addResourceLocations("classpath:/META-INF/resources/js/jquery/");
 		registry.addResourceHandler("/js/**").addResourceLocations("classpath:/META-INF/resources/js/");
-		logger.info("addResourceHandlers===>");
 	}
 	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
+		logger.info("addViewControllers===>");
 		// 发现下面这行被注释掉的代码无效：
 		//registry.addViewController("/abcd").setViewName("hello");
-		logger.info("addViewControllers===>");
 	}
 
 }
