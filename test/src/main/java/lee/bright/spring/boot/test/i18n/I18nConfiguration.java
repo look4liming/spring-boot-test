@@ -1,6 +1,4 @@
-package lee.bright.spring.boot.test.config;
-
-import lee.bright.spring.boot.test.i18n.MyLocaleResolver;
+package lee.bright.spring.boot.test.i18n;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
