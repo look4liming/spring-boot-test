@@ -3,6 +3,7 @@ package lee.bright.spring.boot.test.thymeleaf;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -15,17 +16,26 @@ public class LoginController {
 	}
 	
 	@RequestMapping("login")
-	public String login(@RequestParam String username, @RequestParam String password, Map<String, Object> model) {
+	public String login(@RequestParam String username, @RequestParam String password) {
 		if (username == null || password == null) {
-			return "login/loginFailure";
+			return "redirect:/loginFailure";
 		}
 		username = username.trim();
 		password = password.trim();
 		if (username.length() == 0 || password.length() == 0) {
-			return "login/loginFailure";
+			return "redirect:/loginFailure";
 		}
-		model.put("username", username);
+		return "redirect:/loginSuccess";
+	}
+	
+	@RequestMapping("/loginSuccess")
+	public String loginSuccess() {
 		return "login/loginSuccess";
+	}
+	
+	@RequestMapping("/loginFailrue")
+	public String loginFailure() {
+		return "login/loginFailure";
 	}
 
 }
