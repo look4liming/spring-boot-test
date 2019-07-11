@@ -13,7 +13,7 @@ import java.net.UnknownHostException;
 public class EchoClient {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		for (int i = 0; i < 3000; i++) {
+		for (int i = 1; i <= 30000; i++) {
 			new Thread() {
 				public void run() {
 					Socket socket = null;
@@ -43,6 +43,13 @@ public class EchoClient {
 					}
 				}
 			}.start();
+			if (i % 2000 == 0) {
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 
