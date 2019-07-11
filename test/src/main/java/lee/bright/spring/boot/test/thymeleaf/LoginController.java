@@ -1,9 +1,6 @@
 package lee.bright.spring.boot.test.thymeleaf;
 
-import java.util.Map;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
