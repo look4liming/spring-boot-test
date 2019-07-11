@@ -7,20 +7,43 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+ * @author Bright Lee
+ */
 public class EchoClient {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		Socket socket = new Socket("127.0.0.1", 6666);
-		OutputStream out = socket.getOutputStream();
-		out.write("Hello!!!".getBytes("UTF-8"));
-		out.flush();
-		InputStream in = socket.getInputStream();
-		InputStreamReader r = new InputStreamReader(in, "UTF-8");
-		int c = -1;
-		while ((c = r.read()) != -1) {
-			System.out.print((char) c);
+		for (int i = 0; i < 3000; i++) {
+			new Thread() {
+				public void run() {
+					Socket socket = null;
+					try {
+						socket = new Socket("127.0.0.1", 6666);
+						OutputStream out = socket.getOutputStream();
+						out.write("Hello!!!".getBytes("UTF-8"));
+						out.flush();
+						InputStream in = socket.getInputStream();
+						InputStreamReader r = new InputStreamReader(in, "UTF-8");
+						StringBuilder buf = new StringBuilder();
+						int c = -1;
+						while ((c = r.read()) != -1) {
+							buf.append((char) c);
+						}
+						System.out.println(buf);
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						if (socket != null) {
+							try {
+								socket.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			}.start();
 		}
-		socket.close();
 	}
 
 }

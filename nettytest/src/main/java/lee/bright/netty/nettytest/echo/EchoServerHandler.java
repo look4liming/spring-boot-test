@@ -1,5 +1,7 @@
 package lee.bright.netty.nettytest.echo;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -14,6 +16,8 @@ import io.netty.util.CharsetUtil;
  */
 public class EchoServerHandler extends ChannelInboundHandlerAdapter implements ChannelInboundHandler {
 	
+	private static final AtomicLong AL = new AtomicLong(0L);
+	
 	public EchoServerHandler() {
 	}
 	
@@ -23,7 +27,8 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter implements C
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) {
 		ByteBuf in = (ByteBuf) msg;
-		System.out.println("服务器收到消息：" + in.toString(CharsetUtil.UTF_8));
+		long l = AL.incrementAndGet();
+		System.out.println("服务器收到消息（" + l + "）：" + in.toString(CharsetUtil.UTF_8));
 		// 将收到的消息回传给客户端：
 		ctx.write(in);
 	}
