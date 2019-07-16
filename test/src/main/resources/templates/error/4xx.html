@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[[${status}]]</title>
+<link rel="icon" type="image/x-icon" th:href="@{/favicon.ico}"></link>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery/jquery.js}"></script>
+</head>
+<body>
+/templates/error/4xx.html<br/>
+以下是错误页面可以获得的信息：<br/>
+<table>
+	<tr>
+		<td>timestamp</td>
+		<td><label th:text="${timestamp}"></label></td>
+	</tr>
+	<tr>
+		<td>status</td>
+		<td><label th:text="${status}"></label></td>
+	</tr>
+	<tr>
+		<td>error</td>
+		<td><label th:text="${error}"></label></td>
+	</tr>
+	<tr>
+		<td>exception</td>
+		<td><label th:text="${exception}"></label></td>
+	</tr>
+	<tr>
+		<td>message</td>
+		<td><label th:text="${message}"></label></td>
+	</tr>
+	<tr>
+		<td>errors</td>
+		<td><label th:text="${errors}"></label></td>
+	</tr>
+</table>
+</body>
+</html>
