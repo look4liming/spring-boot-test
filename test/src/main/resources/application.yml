@@ -32,6 +32,10 @@ spring:
             enabled: true
             charset: UTF-8
             force: true
+    thymeleaf: 
+        cache: false
+    template: 
+        cache: false
 
 server: 
     port: 1234

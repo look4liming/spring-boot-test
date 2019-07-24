@@ -30,7 +30,7 @@ public class LoginController {
 		return "login/loginSuccess";
 	}
 	
-	@RequestMapping("/loginFailrue")
+	@RequestMapping("/loginFailure")
 	public String loginFailure() {
 		return "login/loginFailure";
 	}
